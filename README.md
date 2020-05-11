@@ -32,7 +32,7 @@ db.locations.findOne({
 // Select 2 of 3 points
 db.locations.find({ 
   location: {
-    $near: { 
+    $geoWithin: {
       $geometry: {
         type: "Polygon", 
          coordinates: [
@@ -48,7 +48,6 @@ db.locations.find({
     } 
   } 
 }).pretty()
-
 
 // Find all points location in 4km radius circle
 db.locations.find({ 
